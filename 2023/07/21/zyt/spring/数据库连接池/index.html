@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="基本概念![[Pasted image 20221012100417.png]] c3p0导入下载c3p0，并在项目中导入并添加为库导入：![[Pasted image 20221012110321.png]]在src中添加xml文件，并做如下修改：![[Pasted image 20221012110406.png]] 12345&lt;attribute name&#x3D;&quot;JndiName">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/07/21/zyt/spring/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本概念![[Pasted image 20221012100417.png]] c3p0导入下载c3p0，并在项目中导入并添加为库导入：![[Pasted image 20221012110321.png]]在src中添加xml文件，并做如下修改：![[Pasted image 20221012110406.png]] 12345&lt;attribute name&#x3D;&quot;JndiName">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-21T05:14:42.172Z">
+<meta property="article:modified_time" content="2022-10-15T15:33:24.006Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-zyt/spring/数据库连接池" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/spring/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:42.172Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>![[Pasted image 20221012100417.png]]</p>
+<h2 id="c3p0"><a href="#c3p0" class="headerlink" title="c3p0"></a>c3p0</h2><h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p>下载c3p0，并在项目中导入并添加为库<br>导入：<br>![[Pasted image 20221012110321.png]]<br>在src中添加xml文件，并做如下修改：<br>![[Pasted image 20221012110406.png]]</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;JndiName&quot;</span>&gt;</span>java:PooledDS<span class="tag">&lt;/<span class="name">attribute</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;JdbcUrl&quot;</span>&gt;</span>jdbc:mysql://localhost/sql（sql是数据库名字）<span class="tag">&lt;/<span class="name">attribute</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;DriverClass&quot;</span>&gt;</span>org.postgresql.Driver<span class="tag">&lt;/<span class="name">attribute</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;User&quot;</span>&gt;</span>root（用户名字）<span class="tag">&lt;/<span class="name">attribute</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">attribute</span> <span class="attr">name</span>=<span class="string">&quot;Password&quot;</span>&gt;</span>（用户密码）<span class="tag">&lt;/<span class="name">attribute</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>没运行起来，不用了</p>
+<h2 id="druid"><a href="#druid" class="headerlink" title="druid"></a>druid</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>这个教程还可以（看这个下面代码部分可以不看）：</p>
+<p>添加配置文件，添加到库中：<br>![[druid-1.1.12.jar]]</p>
+<p>测试文件（可不看）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> day02_DateBaseConnect.druid;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSourceFactory;  </span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.proxy.DruidDriver;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;  </span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;  </span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;  </span><br><span class="line"><span class="keyword">import</span> java.util.Properties;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">demo</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;  </span><br><span class="line">        <span class="type">Properties</span> <span class="variable">pro</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();  </span><br><span class="line">        <span class="comment">//注意，此处的demo是当前类名  ,而druid.properties是任意目录下的设置文件</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">is</span> <span class="operator">=</span> demo.class.getClassLoader().getResourceAsStream(<span class="string">&quot;druid.properties&quot;</span>);  </span><br><span class="line">        <span class="comment">//加载配置文件</span></span><br><span class="line">        pro.load(is);  </span><br><span class="line">        <span class="type">DataSource</span> <span class="variable">ds</span> <span class="operator">=</span> DruidDataSourceFactory.createDataSource(pro);  </span><br><span class="line">		<span class="comment">//获取连接</span></span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> ds.getConnection();  </span><br><span class="line">        System.out.println(conn);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>druid.properties</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">driverClassName=com.mysql.jdbc.Driver  </span><br><span class="line">url=jdbc:mysql://127.0.0.1:3306/sql  </span><br><span class="line">username=root  </span><br><span class="line">password=  </span><br><span class="line">#初始连接数  </span><br><span class="line">initialSize=5  </span><br><span class="line">#最大连接数  </span><br><span class="line">maxActive=10  </span><br><span class="line">#最大等待时间  </span><br><span class="line">maxWait=3000</span><br></pre></td></tr></table></figure>
+
+<p>得到以下 结果就算成功<br>![[Pasted image 20221012115816.png]]</p>
+<h3 id="构建工具类"><a href="#构建工具类" class="headerlink" title="构建工具类"></a>构建工具类</h3><p>static的类，只需要加载一次，就可以执行多次，非常方便</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> day02_DateBaseConnect.druid.utils;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> com.alibaba.druid.pool.DruidDataSourceFactory;  </span><br><span class="line"><span class="keyword">import</span> day02_DateBaseConnect.druid.demo;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javax.sql.DataSource;  </span><br><span class="line"><span class="keyword">import</span> javax.xml.transform.Result;  </span><br><span class="line"><span class="keyword">import</span> java.io.IOException;  </span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;  </span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;  </span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;  </span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;  </span><br><span class="line"><span class="keyword">import</span> java.sql.Statement;  </span><br><span class="line"><span class="keyword">import</span> java.util.Properties;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">jdbc_utils</span> &#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">DataSource</span> <span class="variable">ds</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//加载配置文件，放在static中只要执行一次就行了  </span></span><br><span class="line">    <span class="keyword">static</span> &#123;  </span><br><span class="line">        <span class="comment">//注意，此处的jdbc_utils是当前类名  </span></span><br><span class="line">        <span class="type">Properties</span> <span class="variable">pro</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            pro.load(jdbc_utils.class.getClassLoader().getResourceAsStream(<span class="string">&quot;druid.properties&quot;</span>));  </span><br><span class="line">            ds = DruidDataSourceFactory.createDataSource(pro);  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//    获取连接  </span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Connection <span class="title function_">getConnection</span><span class="params">()</span> <span class="keyword">throws</span> SQLException &#123;  </span><br><span class="line">        <span class="keyword">return</span> ds.getConnection();  </span><br><span class="line">   &#125;  </span><br><span class="line"><span class="comment">//    释放资源  </span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">close</span><span class="params">(Statement stmt, Connection conn , ResultSet rs)</span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (rs!=<span class="literal">null</span>)&#123;  </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                rs.close();  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;  </span><br><span class="line">                throwables.printStackTrace();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">if</span> (stmt!=<span class="literal">null</span>)&#123;  </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                stmt.close();  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;  </span><br><span class="line">                throwables.printStackTrace();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">if</span> (conn!=<span class="literal">null</span>)&#123;  </span><br><span class="line">            <span class="keyword">try</span> &#123;  </span><br><span class="line">                conn.close();  </span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;  </span><br><span class="line">                throwables.printStackTrace();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">//获取连接池  </span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> DataSource <span class="title function_">getDataSoure</span><span class="params">()</span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> ds;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="增删改查"><a href="#增删改查" class="headerlink" title="增删改查"></a>增删改查</h3><p>调用代码的时候要用到工具类，如果想不调用，可以看网页，别人写的</p>
+<iframe src="https://www.cnblogs.com/empolder-minoz/p/16074207.html" allow="fullscreen" allowfullscreen="" 
+ style="height:100%;width:100%;aspect-ratio:1/1"></iframe>
+
+
+<p>这四个操作基本上没差别，有差别的地方基本只有sql语句和最后执行时调用的参数不一样</p>
+<h4 id="增删改："><a href="#增删改：" class="headerlink" title="增删改："></a>增删改：</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> day02_DateBaseConnect.druid.utils;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;  </span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;  </span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;  </span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">String</span> <span class="variable">sqlCommond</span> <span class="operator">=</span> <span class="string">&quot;insert into name_tbl (id, name)values (?,?);&quot;</span>;  </span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="type">PreparedStatement</span> <span class="variable">pstmt</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            <span class="comment">//获取连接，固定操作  </span></span><br><span class="line">            conn = jdbc_utils.getConnection();  </span><br><span class="line">            pstmt = conn.prepareStatement(sqlCommond);  </span><br><span class="line">			</span><br><span class="line">			<span class="comment">//这里可以多次执行</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">6</span>;i&lt;<span class="number">10</span>;i++)&#123;  </span><br><span class="line">                <span class="comment">//完善sql指令  </span></span><br><span class="line">                pstmt.setInt(<span class="number">1</span>, i);  </span><br><span class="line">                pstmt.setString(<span class="number">2</span>, <span class="string">&quot;李老八&quot;</span>);  </span><br><span class="line">  </span><br><span class="line">                <span class="comment">//执行语句，和别的不一样，其他基本没差  </span></span><br><span class="line">                pstmt.executeUpdate();  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;  </span><br><span class="line">            throwables.printStackTrace();  </span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;  </span><br><span class="line">            jdbc_utils.close(pstmt , conn, <span class="literal">null</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="删"><a href="#删" class="headerlink" title="删"></a>删</h4><p>和增只有sql语句差别,同样可以循环执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> day02_DateBaseConnect.druid.utils;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;  </span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;  </span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;  </span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">String</span> <span class="variable">sqlCommond</span> <span class="operator">=</span> <span class="string">&quot;delete from name_tbl where id=(?);&quot;</span>;  </span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="type">PreparedStatement</span> <span class="variable">pstmt</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            <span class="comment">//获取连接，固定操作  </span></span><br><span class="line">            conn = jdbc_utils.getConnection();  </span><br><span class="line">            pstmt = conn.prepareStatement(sqlCommond);  </span><br><span class="line">  </span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">6</span>;i&lt;<span class="number">10</span>;i++)&#123;  </span><br><span class="line">                <span class="comment">//完善sql指令 ， 第一个参数表示填充第几个？</span></span><br><span class="line">                pstmt.setInt(<span class="number">1</span>, i);  </span><br><span class="line">  </span><br><span class="line">                <span class="comment">//执行语句  </span></span><br><span class="line">                pstmt.executeUpdate();  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;  </span><br><span class="line">            throwables.printStackTrace();  </span><br><span class="line">        &#125;<span class="keyword">finally</span> &#123;  </span><br><span class="line">            jdbc_utils.close(pstmt , conn, <span class="literal">null</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="查"><a href="#查" class="headerlink" title="查"></a>查</h4><p>sql语句和最后的执行语句不一样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> day02_DateBaseConnect.druid.utils;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;  </span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;  </span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;  </span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">main</span> &#123;  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;  </span><br><span class="line">        <span class="type">String</span> <span class="variable">sqlCommond</span> <span class="operator">=</span> <span class="string">&quot;select * from name_tbl;&quot;</span>;  </span><br><span class="line">        <span class="type">Connection</span> <span class="variable">conn</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="type">PreparedStatement</span> <span class="variable">pstmt</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            <span class="comment">//获取连接，固定操作  </span></span><br><span class="line">            conn = jdbc_utils.getConnection();  </span><br><span class="line">            pstmt = conn.prepareStatement(sqlCommond);  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">            <span class="comment">//执行语句  可以将信息输入到list中</span></span><br><span class="line">            <span class="type">ResultSet</span> <span class="variable">rs</span> <span class="operator">=</span> pstmt.executeQuery();  </span><br><span class="line">            <span class="keyword">while</span> (rs.next())&#123;  </span><br><span class="line">                System.out.println(rs.getInt(<span class="string">&quot;id&quot;</span>)+rs.getString(<span class="string">&quot;name&quot;</span>));  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException throwables) &#123;  </span><br><span class="line">            throwables.printStackTrace();  </span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;  </span><br><span class="line">            jdbc_utils.close(pstmt, conn, <span class="literal">null</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/spring/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/" data-id="clkc5jkwr002kysts3atcdrdz" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/21/zyt/spring/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/21/zyt/spring/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%87%BA%EF%BC%88mysql%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/excalidraw/" rel="tag">excalidraw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" rel="tag">标签一 标签二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/excalidraw/" style="font-size: 20px;">excalidraw</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" style="font-size: 10px;">标签一 标签二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Redis/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/polymorphism.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Hash%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/final%E7%A4%BA%E6%84%8F.excalidraw/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

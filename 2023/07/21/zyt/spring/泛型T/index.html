@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="简述泛型提出是为了解决编译的时候产生的对象不匹配的问题的。 关键字：T ，可以理解为type类型。 Java 泛型详解(超详细的java泛型方法解析)_java_脚本之家 (jb51.net) 和Object对比早期的Object类型可以接收任意的对象类型，但是在实际的使用中，会有类型转换的问题。也就存在这隐患，所以Java提供了泛型来解决这个安全问题。泛型在定义的时候不具体，使用的时候才变得具体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/07/21/zyt/spring/%E6%B3%9B%E5%9E%8BT/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简述泛型提出是为了解决编译的时候产生的对象不匹配的问题的。 关键字：T ，可以理解为type类型。 Java 泛型详解(超详细的java泛型方法解析)_java_脚本之家 (jb51.net) 和Object对比早期的Object类型可以接收任意的对象类型，但是在实际的使用中，会有类型转换的问题。也就存在这隐患，所以Java提供了泛型来解决这个安全问题。泛型在定义的时候不具体，使用的时候才变得具体">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-21T05:14:42.181Z">
+<meta property="article:modified_time" content="2023-06-03T13:01:58.822Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-zyt/spring/泛型T" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/spring/%E6%B3%9B%E5%9E%8BT/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:42.181Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h1><p>泛型提出是为了解决编译的时候产生的对象不匹配的问题的。</p>
+<p>关键字：<strong>T</strong> ，可以理解为type类型。</p>
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/216499.htm">Java 泛型详解(超详细的java泛型方法解析)_java_脚本之家 (jb51.net)</a></p>
+<h1 id="和Object对比"><a href="#和Object对比" class="headerlink" title="和Object对比"></a>和Object对比</h1><p>早期的Object类型可以接收任意的对象类型，但是在实际的使用中，会有类型转换的问题。也就存在这隐患，所以Java提供了泛型来解决这个安全问题。<br>泛型在定义的时候不具体，使用的时候才变得具体。在使用的时候确定泛型的具体数据类型。即：<strong>在创建对象的时候确定泛型。</strong><br>&#x3D;&#x3D;Object在运行的时候报错，泛型可以让程序在编译的时候报错&#x3D;&#x3D;</p>
+<p>在Java SE 1.5之前，没有泛型的情况的下，通过对类型Object的引用来实现参数的“任意化”，“任意化”带来的缺点是要做显式的强制类型转换，而这种转换是要求开发者对实际参数类型可以预知的情况下进行的。对于强制类型转换错误的情况，编译器可能不提示错误，在运行的时候才出现异常，这是一个安全隐患。</p>
+<p>泛型的好处是在编译的时候检查类型安全，并且所有的强制转换都是自动和隐式的，提高代码的重用率。</p>
+<p>1、Object是所有类的积累，范围更广，泛型T在使用的的时候就会具体到某一种类型</p>
+<p>2、Object定义的类型在使用过程中需要强转，这就需要我们预先知道是什么类型，编译器不会检查Object类型的强转错误，只有在运行时才会抛出；泛型T的类型在编译期间就会进行检测，它的类型转换是自动的，隐式进行的</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/spring/%E6%B3%9B%E5%9E%8BT/" data-id="clkc5jkwr002jystsh17nemhk" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/21/zyt/spring/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/21/zyt/spring/%E6%B3%9B%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/excalidraw/" rel="tag">excalidraw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" rel="tag">标签一 标签二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/excalidraw/" style="font-size: 20px;">excalidraw</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" style="font-size: 10px;">标签一 标签二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Redis/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/polymorphism.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Hash%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/final%E7%A4%BA%E6%84%8F.excalidraw/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

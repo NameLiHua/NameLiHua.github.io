@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="简单来说就是创建五个变量（demoCode中用的是paging，一样的）五个变量分别是 1234int pagesize &#x3D; 5;   &#x2F;&#x2F;一页显示多少,初始是5  int lineCount&#x3D;0;      &#x2F;&#x2F;总数据数  int pageCount&#x3D;0;      &#x2F;&#x2F;页面数  int pageNow &#x3D; 1;    &#x2F;&#x2F;当前页面   使用sql的limit进行设置和调试。这里使用paging">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/07/21/zyt/spring/jsp%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="简单来说就是创建五个变量（demoCode中用的是paging，一样的）五个变量分别是 1234int pagesize &#x3D; 5;   &#x2F;&#x2F;一页显示多少,初始是5  int lineCount&#x3D;0;      &#x2F;&#x2F;总数据数  int pageCount&#x3D;0;      &#x2F;&#x2F;页面数  int pageNow &#x3D; 1;    &#x2F;&#x2F;当前页面   使用sql的limit进行设置和调试。这里使用paging">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-21T05:14:42.059Z">
+<meta property="article:modified_time" content="2022-12-22T06:17:39.387Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-zyt/spring/jsp分页操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/spring/jsp%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:42.059Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>简单来说就是创建五个变量（demoCode中用的是paging，一样的）<br>五个变量分别是</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">pagesize</span> <span class="operator">=</span> <span class="number">5</span>;   <span class="comment">//一页显示多少,初始是5  </span></span><br><span class="line"><span class="type">int</span> lineCount=<span class="number">0</span>;      <span class="comment">//总数据数  </span></span><br><span class="line"><span class="type">int</span> pageCount=<span class="number">0</span>;      <span class="comment">//页面数  </span></span><br><span class="line"><span class="type">int</span> <span class="variable">pageNow</span> <span class="operator">=</span> <span class="number">1</span>;    <span class="comment">//当前页面  </span></span><br></pre></td></tr></table></figure>
+<p>使用sql的limit进行设置和调试。<br>这里使用paging类对信息进行存储，避免重复查询。<br>每一次都从session中获取paging类。</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1qb411K7kL/?spm_id_from=333.337.search-card.all.click&vd_source=dce23de04894906de72ab45a1e9c0550">jsp分页_哔哩哔哩_bilibili</a></p>
+<p>paging类如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> save;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">paging</span> &#123;  </span><br><span class="line">    <span class="type">int</span> <span class="variable">pagesize</span> <span class="operator">=</span> <span class="number">5</span>;   <span class="comment">//一页显示多少,初始是5  </span></span><br><span class="line">    <span class="type">int</span> lineCount=<span class="number">0</span>;      <span class="comment">//总数据数  </span></span><br><span class="line">    <span class="type">int</span> pageCount=<span class="number">0</span>;      <span class="comment">//页面数  </span></span><br><span class="line">    <span class="type">int</span> <span class="variable">pageNow</span> <span class="operator">=</span> <span class="number">1</span>;    <span class="comment">//当前页面  </span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getPagesize</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> pagesize;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPagesize</span><span class="params">(<span class="type">int</span> pagesize)</span> &#123;  </span><br><span class="line">        <span class="built_in">this</span>.pagesize = pagesize;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getLineCount</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> lineCount;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setLineCount</span><span class="params">(<span class="type">int</span> lineCount)</span> &#123;  </span><br><span class="line">        <span class="built_in">this</span>.lineCount = lineCount;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getPageCount</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> pageCount;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPageCount</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="built_in">this</span>.pageCount = lineCount%pagesize==<span class="number">0</span> ? lineCount/pagesize : lineCount /pagesize+<span class="number">1</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getPageNow</span><span class="params">()</span> &#123;  </span><br><span class="line">        <span class="keyword">return</span> pageNow;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setPageNow</span><span class="params">(<span class="type">int</span> pn)</span> &#123;  </span><br><span class="line">        <span class="keyword">if</span> (pn&lt;=<span class="number">0</span>)&#123;  </span><br><span class="line">            <span class="built_in">this</span>.pageNow = <span class="number">1</span>;  </span><br><span class="line">            <span class="keyword">return</span>;        &#125;  </span><br><span class="line">        <span class="keyword">if</span> (pn&gt;<span class="built_in">this</span>.pageCount)&#123;  </span><br><span class="line">            <span class="built_in">this</span>.pageNow = pageCount;  </span><br><span class="line">            <span class="keyword">return</span>;        &#125;  </span><br><span class="line">        <span class="built_in">this</span>.pageNow = pn;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getLine</span><span class="params">()</span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> pagesize*(pageNow-<span class="number">1</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;java.sql.*&quot;</span> %&gt;  </span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;dao.jdbc_utils&quot;</span> %&gt;  </span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;save.paging&quot;</span> %&gt;  </span><br><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">&quot;jakarta.servlet.http.HttpSession&quot;</span> %&gt;  </span><br><span class="line">&lt;%@ page contentType=<span class="string">&quot;text/html&quot;</span> %&gt;  </span><br><span class="line">&lt;%@ <span class="type">page</span> <span class="variable">pageEncoding</span> <span class="operator">=</span> <span class="string">&quot;utf-8&quot;</span> %&gt;  </span><br><span class="line">&lt;jsp:useBean id=<span class="string">&quot;loginBean&quot;</span> class=<span class="string">&quot;save.Login&quot;</span> scope=<span class="string">&quot;session&quot;</span>/&gt;  </span><br><span class="line">&lt;jsp:useBean id=<span class="string">&quot;pagingFenye&quot;</span> class=<span class="string">&quot;save.paging&quot;</span> scope=<span class="string">&quot;session&quot;</span> /&gt;  </span><br><span class="line">&lt;div class=<span class="string">&quot;show-car&quot;</span>&gt;  </span><br><span class="line">    &lt;div class=<span class="string">&quot;show-car-head&quot;</span>&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;商品图片&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;商品编号&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;商品名称&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;商品厂商&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;商品单价&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;商品数量&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;修改商品&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">        &lt;div&gt;&lt;a&gt;删除商品&lt;/a&gt;&lt;/div&gt;  </span><br><span class="line">    &lt;/div&gt;    &lt;hr&gt;    &lt;%  </span><br><span class="line">        <span class="comment">//获取分页对象  </span></span><br><span class="line">        <span class="type">paging</span> <span class="variable">pg</span> <span class="operator">=</span> (paging) session.getAttribute(<span class="string">&quot;pagingFenye&quot;</span>);  </span><br><span class="line">        pg.setPagesize(<span class="number">2</span>);  </span><br><span class="line">  </span><br><span class="line">        <span class="type">Connection</span> <span class="variable">con</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        <span class="type">PreparedStatement</span> <span class="variable">pstmt</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">        String SQL=<span class="string">&quot;&quot;</span>;  </span><br><span class="line">        <span class="type">ResultSet</span> <span class="variable">rs</span> <span class="operator">=</span> <span class="literal">null</span>;  </span><br><span class="line">  </span><br><span class="line">        <span class="keyword">try</span>&#123;  </span><br><span class="line">            <span class="comment">//获取连接，固定操作  </span></span><br><span class="line">            con = jdbc_utils.getConnection();  </span><br><span class="line">  </span><br><span class="line">            <span class="comment">//如果是第一次访问页面，则进行查询，获取总条数  </span></span><br><span class="line">            <span class="keyword">if</span>(pg.getLineCount()==<span class="number">0</span>)&#123;  </span><br><span class="line">                <span class="comment">//向数据库中查询有多少行  </span></span><br><span class="line">                SQL = <span class="string">&quot;select count(*) from mobileform&quot;</span>;  </span><br><span class="line">                <span class="comment">//执行语句  可以将信息输入到list中  </span></span><br><span class="line">                pstmt = con.prepareStatement(SQL);  </span><br><span class="line">                rs = pstmt.executeQuery();  </span><br><span class="line">                rs.next();  </span><br><span class="line">                pg.setLineCount(rs.getInt(<span class="number">1</span>));  </span><br><span class="line">                pg.setPageCount();  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">            <span class="comment">//获取传入的当前页的值  </span></span><br><span class="line">            <span class="type">String</span> <span class="variable">getNow</span> <span class="operator">=</span> request.getParameter(<span class="string">&quot;pageNow&quot;</span>);  </span><br><span class="line">            <span class="keyword">if</span> (getNow!=<span class="literal">null</span>)&#123;  </span><br><span class="line">                pg.setPageNow(Integer.parseInt(getNow));  </span><br><span class="line">            &#125;  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">            SQL = <span class="string">&quot;select * from mobileform limit ?,?&quot;</span>;  </span><br><span class="line">            <span class="comment">//执行语句  可以将信息输入到list中  </span></span><br><span class="line">            pstmt = con.prepareStatement(SQL);  </span><br><span class="line">            pstmt.setInt(<span class="number">1</span>,pg.getLine());  </span><br><span class="line">            pstmt.setInt(<span class="number">2</span>,pg.getPagesize());  </span><br><span class="line">            rs = pstmt.executeQuery();  </span><br><span class="line">  </span><br><span class="line">            <span class="comment">//用来放置html语句  </span></span><br><span class="line">            <span class="type">String</span> <span class="variable">put</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;  </span><br><span class="line">  </span><br><span class="line">            String version=<span class="string">&quot;&quot;</span>;  </span><br><span class="line">            String name=<span class="string">&quot;&quot;</span>;  </span><br><span class="line">            String maker=<span class="string">&quot;&quot;</span>;  </span><br><span class="line">            <span class="type">float</span> price=<span class="number">0</span>;  </span><br><span class="line">            <span class="type">int</span> amount=<span class="number">0</span>;  </span><br><span class="line">            String image=<span class="string">&quot;&quot;</span>;  </span><br><span class="line">  </span><br><span class="line">            <span class="keyword">while</span>(rs.next()) &#123;  </span><br><span class="line">  </span><br><span class="line">                version = rs.getString(<span class="number">1</span>);  </span><br><span class="line">                name = rs.getString(<span class="number">2</span>);  </span><br><span class="line">                maker = rs.getString(<span class="number">3</span>);  </span><br><span class="line">                price =rs.getInt(<span class="number">4</span>);  </span><br><span class="line">                image = rs.getString(<span class="number">6</span>);  </span><br><span class="line">                amount = rs.getInt(<span class="number">8</span>);  </span><br><span class="line">                put=<span class="string">&quot;&lt;div class=\&quot;show-car-body\&quot;&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&lt;img src=\&quot;../image/&quot;</span>+image+<span class="string">&quot;\&quot;&gt;&lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&lt;a&gt;&quot;</span>+version+<span class="string">&quot;&lt;/a&gt;&lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&lt;a&gt;&quot;</span>+name+<span class="string">&quot;&lt;/a&gt;&lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&lt;a&gt;&quot;</span>+maker+<span class="string">&quot;&lt;/a&gt;&lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&lt;a&gt;&quot;</span>+price+<span class="string">&quot;&lt;/a&gt;&lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&lt;a&gt;&quot;</span>+amount+<span class="string">&quot;&lt;/a&gt;&lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;           &lt;form action=\&quot;adminChangeGoods\&quot; method=\&quot;post\&quot;&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;               &lt;input type=\&quot;hidden\&quot; name=\&quot;goodsVersion\&quot; value=\&quot;&quot;</span>+version+<span class="string">&quot;\&quot;&gt;&quot;</span>+  </span><br><span class="line">                        <span class="string">&quot;               &lt;button type=\&quot;submit\&quot;&gt;修改商品&lt;/button&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;           &lt;/form&gt;&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;div&gt;&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;           &lt;form action=\&quot;adminDeleteGoods\&quot; method=\&quot;post\&quot;&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;               &lt;input type=\&quot;hidden\&quot; name=\&quot;goodsVersion\&quot; value=\&quot;&quot;</span>+version+<span class="string">&quot;\&quot;&gt;&quot;</span>+  </span><br><span class="line">                        <span class="string">&quot;               &lt;button type=\&quot;submit\&quot;&gt;删除商品&lt;/button&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;           &lt;/form&gt;&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;        &lt;/div&gt;\n&quot;</span> +  </span><br><span class="line">                        <span class="string">&quot;    &lt;/div&gt;&quot;</span>;  </span><br><span class="line">                out.print(put);  </span><br><span class="line">            &#125;  </span><br><span class="line">            con.close() ;<span class="comment">//把连接返回连接池。  </span></span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">catch</span>(SQLException e) &#123;  </span><br><span class="line">            out.print(<span class="string">&quot;&lt;h1&gt;&quot;</span>+e+<span class="string">&quot;&lt;/h1&gt;&quot;</span>);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">finally</span>&#123;  </span><br><span class="line">            <span class="keyword">try</span>&#123;  </span><br><span class="line">                con.close();  </span><br><span class="line">            &#125;  </span><br><span class="line">            <span class="keyword">catch</span>(Exception ee)&#123;&#125;  </span><br><span class="line">        &#125;    %&gt;  </span><br><span class="line">    &lt;div style=<span class="string">&quot;text-align: center;margin: 0 auto&quot;</span>&gt;  </span><br><span class="line">        &lt;a href=<span class="string">&quot;?pageNow=&lt;%= pg.getPageNow()-1%&gt;&quot;</span>&gt;&lt;button&gt; &lt; &lt;/button&gt;&lt;/a&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;select onchange=<span class="string">&quot;window.location=&#x27;?pageNow=&#x27;+this.value;&quot;</span>&gt;  </span><br><span class="line">            &lt;%  </span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=pg.getPageCount();i++)&#123;  </span><br><span class="line">            %&gt;  </span><br><span class="line">                &lt;option value=<span class="string">&quot;&lt;%= i%&gt;&quot;</span> selected=<span class="string">&quot;selected&quot;</span>&gt; &lt;%= i%&gt; &lt;/option&gt;  </span><br><span class="line">            &lt;%  </span><br><span class="line">                &#125;  </span><br><span class="line">            %&gt;  </span><br><span class="line">        &lt;/select&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;%  </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=pg.getPageCount();i++)&#123;  </span><br><span class="line">        %&gt;  </span><br><span class="line">        &lt;a href=<span class="string">&quot;?pageNow=&lt;%= i%&gt;&quot;</span>&gt;  </span><br><span class="line">            &lt;button&gt;&lt;%= i%&gt;&lt;/button&gt;  </span><br><span class="line">        &lt;/a&gt;        &lt;%  </span><br><span class="line">            &#125;  </span><br><span class="line">        %&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;a href=<span class="string">&quot;?pageNow=&lt;%= pg.getPageNow()+1%&gt;&quot;</span>&gt;&lt;button&gt; &gt; &lt;/button&gt;&lt;/a&gt;  </span><br><span class="line">    &lt;/div&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;div class=<span class="string">&quot;paging&quot;</span>&gt;  </span><br><span class="line">        &lt;button onclick=<span class="string">&quot;location.href=&#x27;?pageNow=&lt;%= pg.getPageNow()-1%&gt;&#x27;&quot;</span>&gt; &lt; &lt;/button&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;%  </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=pg.getPageCount();i++)&#123;  </span><br><span class="line">        %&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;button onclick=<span class="string">&quot;location.href=&#x27;?pageNow=&lt;%= i%&gt;&#x27;&quot;</span>&gt;&lt;%= i%&gt;&lt;/button&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;%  </span><br><span class="line">            &#125;  </span><br><span class="line">        %&gt;  </span><br><span class="line">  </span><br><span class="line">        &lt;button onclick=<span class="string">&quot;location.href=&#x27;?pageNow=&lt;%= pg.getPageNow()+1%&gt;&#x27;&quot;</span>&gt; &gt; &lt;/button&gt;  </span><br><span class="line">  </span><br><span class="line">    &lt;/div&gt;  </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.paging</span> &#123;  </span><br><span class="line">    <span class="attribute">text-align</span>: center;  </span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="selector-class">.paging</span> <span class="selector-tag">button</span> &#123;  </span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;  </span><br><span class="line">    <span class="attribute">width</span>: <span class="number">40px</span>;  </span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">0</span>;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="selector-class">.paging</span> <span class="selector-tag">button</span><span class="selector-pseudo">:hover</span>&#123;  </span><br><span class="line">    <span class="attribute">cursor</span>: pointer;  </span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#50536e</span>;  </span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#f4f1de</span>;  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/spring/jsp%E5%88%86%E9%A1%B5%E6%93%8D%E4%BD%9C/" data-id="clkc5jkwj001systs9ury8yts" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/21/zyt/spring/jsp%E5%A4%A7%E4%BD%9C%E4%B8%9A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/21/zyt/spring/jdbc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/excalidraw/" rel="tag">excalidraw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" rel="tag">标签一 标签二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/excalidraw/" style="font-size: 20px;">excalidraw</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" style="font-size: 10px;">标签一 标签二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Redis/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/polymorphism.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Hash%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/final%E7%A4%BA%E6%84%8F.excalidraw/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

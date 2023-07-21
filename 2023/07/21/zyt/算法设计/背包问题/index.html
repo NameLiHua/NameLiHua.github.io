@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="题目视频参考，看就完事了：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1C7411K79w&#x2F;?spm_id_from&#x3D;333.337.search-card.all.click&amp;vd_source&#x3D;dce23de04894906de72ab45a1e9c0550 ![[Pasted image 20221016202509.png]] ![[Pasted image">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/07/21/zyt/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="题目视频参考，看就完事了：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1C7411K79w&#x2F;?spm_id_from&#x3D;333.337.search-card.all.click&amp;vd_source&#x3D;dce23de04894906de72ab45a1e9c0550 ![[Pasted image 20221016202509.png]] ![[Pasted image">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-21T05:14:47.975Z">
+<meta property="article:modified_time" content="2022-11-17T11:54:13.843Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-zyt/算法设计/背包问题" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:47.975Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>视频参考，看就完事了：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1C7411K79w/?spm_id_from=333.337.search-card.all.click&vd_source=dce23de04894906de72ab45a1e9c0550">https://www.bilibili.com/video/BV1C7411K79w/?spm_id_from=333.337.search-card.all.click&amp;vd_source=dce23de04894906de72ab45a1e9c0550</a></p>
+<p>![[Pasted image 20221016202509.png]]</p>
+<p>![[Pasted image 20221016202521.png]]</p>
+<p>画表就完事了。</p>
+<p>![[Pasted image 20221017111826.png]]</p>
+<p>创建dp[i]  [j]</p>
+<p>i:  第几个物品<br>j:可容纳重量<br>w是物品重量，c是物品价值，比如w[ k ]表示第k件物品的重量，c[ k ]表示第k件物品的价值</p>
+<p>代码实现（一定要用numpy！！！！）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np  </span><br><span class="line">  </span><br><span class="line">wm = <span class="number">10</span>  <span class="comment"># (可容纳重量)  </span></span><br><span class="line">num = <span class="number">4</span>  <span class="comment"># 物品数量  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment"># w是物品重量，第一个是0  </span></span><br><span class="line"><span class="comment"># c是物品价值，第一个是0  </span></span><br><span class="line">w = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>]  </span><br><span class="line">c = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">9</span>]  </span><br><span class="line">  </span><br><span class="line">dp = np.array([[<span class="number">0</span>] * (wm + <span class="number">1</span>)] * (num + <span class="number">1</span>))  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, num + <span class="number">1</span>):  </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, wm + <span class="number">1</span>):  </span><br><span class="line">        <span class="keyword">if</span> j &lt; w[i]:  </span><br><span class="line">            dp[i][j] = dp[i - <span class="number">1</span>][j]  </span><br><span class="line">        <span class="keyword">else</span>:  </span><br><span class="line">            dp[i][j] = <span class="built_in">max</span>(dp[i - <span class="number">1</span>][j], (dp[i - <span class="number">1</span>][j - w[i]] + c[i]))  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, num + <span class="number">1</span>):  </span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, wm + <span class="number">1</span>):  </span><br><span class="line">        <span class="built_in">print</span>(dp[i][j], end=<span class="string">&quot; &quot;</span>)  </span><br><span class="line">    <span class="built_in">print</span>()</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="作业1"><a href="#作业1" class="headerlink" title="作业1"></a>作业1</h2><p>![[Pasted image 20221117194108.png]]</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> v[N]=&#123;<span class="number">0</span>,<span class="number">8</span>,<span class="number">10</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">2</span>&#125;; <span class="comment">//每个物体的价值</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> w[N]=&#123;<span class="number">0</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">1</span>&#125;;   <span class="comment">//每个物体的重量或尺寸</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> m[N][N];</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> n=<span class="number">6</span>,c=<span class="number">12</span>; <span class="comment">//n是物体的个数,c代表包的容量</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(m,<span class="number">0</span>,<span class="keyword">sizeof</span>(m));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"></span><br><span class="line">      &#123; <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=c;j++)</span><br><span class="line"></span><br><span class="line">        &#123;  <span class="keyword">if</span>(j&gt;=w[i]) <span class="comment">//此处m数组使用[i-1]是由于i表示1,…,i的物品</span></span><br><span class="line"></span><br><span class="line">          m[i][j]=max(m[i<span class="number">-1</span>][j],  m[i<span class="number">-1</span>][j-w[i]]+v[i]);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">else</span>         <span class="comment">//如果表示i,i+1,…n的物品，则对m使用[i+1]</span></span><br><span class="line"></span><br><span class="line">          m[i][j]=m[i<span class="number">-1</span>][j]; &#125; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="作业2"><a href="#作业2" class="headerlink" title="作业2"></a>作业2</h2><p>![[Pasted image 20221117195400.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" data-id="clkc5jkx50044ystsg6391nqb" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/21/zyt/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/FIRSTVT%E5%92%8CLASTVT%E5%92%8C%E4%BC%98%E5%85%88%E5%85%B3%E7%B3%BB%E8%A1%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/21/zyt/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%EF%BC%88%E6%80%BB%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/excalidraw/" rel="tag">excalidraw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" rel="tag">标签一 标签二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/excalidraw/" style="font-size: 20px;">excalidraw</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" style="font-size: 10px;">标签一 标签二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Redis/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/polymorphism.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Hash%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/final%E7%A4%BA%E6%84%8F.excalidraw/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

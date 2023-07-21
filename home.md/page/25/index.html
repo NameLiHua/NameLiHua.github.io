@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/home.md/page/25/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-zyt/前端/html调用javascript变量" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/html%E8%B0%83%E7%94%A8javascript%E5%8F%98%E9%87%8F/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.596Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>参考这个<br>用document.getElement获取标签<br>var Switch &#x3D; document.getElementById(‘on-off’);<br>Switch.innerHTML &#x3D; ‘开灯’  </p>
+<p>innerHTML可以修改标签里面的文字</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;  </span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;on-off&quot;</span>&gt;</span>关灯<span class="tag">&lt;/<span class="name">button</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript">  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> <span class="title class_">Switch</span> = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;on-off&#x27;</span>);  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> bodys = <span class="variable language_">document</span>.<span class="property">body</span>;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">var</span> flag = <span class="literal">false</span>;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="title class_">Switch</span>.<span class="property">onclick</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        flag = !flag  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        <span class="keyword">if</span> (flag) &#123;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            bodys.<span class="property">className</span> = <span class="string">&#x27;hover&#x27;</span>  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="title class_">Switch</span>.<span class="property">innerHTML</span> = <span class="string">&#x27;开灯&#x27;</span>  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125; <span class="keyword">else</span> &#123;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            bodys.<span class="property">className</span> = <span class="string">&#x27;&#x27;</span>  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="title class_">Switch</span>.<span class="property">innerHTML</span> = <span class="string">&#x27;关灯&#x27;</span>  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span>  </span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css">  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="selector-class">.hover</span> &#123;  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">        <span class="attribute">background-color</span>: black;  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    &#125;  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    <span class="selector-tag">body</span> &#123;  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">        <span class="attribute">background-color</span>: yellow;  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">    &#125;  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml">  </span></span></span><br><span class="line"><span class="language-css"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span>  </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>根据文本框改变变量（差不多了）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;!<span class="variable constant_">DOCTYPE</span> html&gt;  </span><br><span class="line">&lt;html&gt;  </span><br><span class="line">&lt;head&gt;  </span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;  </span><br><span class="line">    &lt;title&gt;狗蛋的爸爸&lt;/title&gt;  </span><br><span class="line">&lt;/head&gt;  </span><br><span class="line">&lt;body&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;form action=&quot;post&quot;&gt;  </span><br><span class="line">    &lt;span&gt;写啥&lt;/span&gt; &lt;input type=&quot;text&quot; id=&quot;username&quot; onchange=active_tex()&gt;  </span><br><span class="line">    &lt;div&gt;        &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot; onchange=active_sex()&gt;男  </span><br><span class="line">        &lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;women&quot; onchange=active_sex()&gt;女  </span><br><span class="line">    &lt;/div&gt;  </span><br><span class="line">    &lt;p id=&quot;tex&quot;&gt;&lt;/p&gt;  </span><br><span class="line">    &lt;p id=&quot;sex&quot;&gt;&lt;/p&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;/form&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;script&gt;  </span><br><span class="line">  </span><br><span class="line">    var input_date = document.getElementById(&#x27;username&#x27;);  </span><br><span class="line">  </span><br><span class="line">    var man_radio = document.getElementById(&#x27;man&#x27;);  </span><br><span class="line">    var women_radio = document.getElementById(&#x27;women&#x27;);  </span><br><span class="line">  </span><br><span class="line">    var tex = document.getElementById(&#x27;tex&#x27;);  </span><br><span class="line">  </span><br><span class="line">    var sex = document.getElementById(&#x27;sex&#x27;);  </span><br><span class="line">  </span><br><span class="line">    function active_tex()&#123;  </span><br><span class="line">        tex.innerText=&quot;输入了&quot;+input_date.value;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    function active_sex()&#123;  </span><br><span class="line">        if (man_radio.checked)&#123;  </span><br><span class="line">            sex.innerText = &quot;性别是男&quot;;  </span><br><span class="line">        &#125;else if(women_radio.checked)&#123;  </span><br><span class="line">            sex.innerText = &quot;性别是女&quot;;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">  </span><br><span class="line">&lt;/body&gt;  </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/html%E8%B0%83%E7%94%A8javascript%E5%8F%98%E9%87%8F/" data-id="clkc5jkwv002xystsdxre9per" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/前端/html" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/html/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.588Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>看菜鸟</p>
+<p>想到什么就写一点</p>
+<p>[[form]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/html/" data-id="clkc5jkwv0030ysts5u1fd7e4" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/前端/form" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/form/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.580Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span>  <span class="attr">type</span>=<span class="string">&quot;输入对象的GUI类型&quot;</span>  <span class="attr">name</span>= <span class="string">&quot;名字&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">GUI类型</span><br><span class="line"></span><br><span class="line">1）文本框text</span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text“ name=&quot;</span><span class="attr">me</span>“ <span class="attr">value</span>=<span class="string">&quot;hi&quot;</span>   <span class="attr">maxlength</span>=<span class="string">&quot;30&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">2）单选框radio</span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span>  <span class="attr">name</span>=<span class="string">&quot;rad&quot;</span>  <span class="attr">value</span>=<span class="string">&quot;red&quot;</span>   <span class="attr">algin</span>= <span class="string">&quot;top&quot;</span>  <span class="attr">checked</span>=<span class="string">&quot;java&quot;</span> &gt;</span></span><br><span class="line"></span><br><span class="line">3）复选框checkbox</span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">Input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>  <span class="attr">name</span>= <span class="string">&quot;ch&quot;</span>  <span class="attr">value</span>=<span class="string">&quot;pink&quot;</span>   <span class="attr">algin</span>= <span class="string">&quot;top&quot;</span>  <span class="attr">checked</span>=<span class="string">&quot;java&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><input  type="输入对象的GUI类型"  name= "名字"></p>
+<p>GUI类型</p>
+<p>1）文本框text</p>
+<p>   &lt;input type&#x3D;”text“ name&#x3D;”me“ value&#x3D;”hi”   maxlength&#x3D;”30”&gt;</p>
+<p>2）单选框radio</p>
+<p>   <input type="radio"  name="rad"  value="red"   algin= "top"  checked="java" ></p>
+<p>3）复选框checkbox</p>
+<p>  <Input type="checkbox"  name= "ch"  value="pink"   algin= "top"  checked="java"><br> <br>  4）口令框password</p>
+<p>  <input type= "password"  name= "me" size= "12"  maxlength="30"></p>
+<p>5）隐藏hidden</p>
+<p>   <input type= "hidden"  name="h"  value= "123"  >   request对象调用getParemeter方法，通过name的名字来获取由value指定的值。</p>
+<p>6）提交键submit</p>
+<p>  <input type= "submit"  name="me"  value="　确　定　" ></p>
+<p>7）重置键：reset</p>
+<p>     <input type="reset" ></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;example3_5_receive.jsp&quot;</span> <span class="attr">method</span>=<span class="string">post</span> <span class="attr">name</span>=<span class="string">form</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span>背景音乐：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;r&quot;</span> <span class="attr">value</span>=<span class="string">&quot;on&quot;</span>&gt;</span>打开  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;r&quot;</span> <span class="attr">value</span>=<span class="string">&quot;off&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;default&quot;</span>&gt;</span>关闭  </span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span>喜欢的球队：  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;item&quot;</span> <span class="attr">value</span>=<span class="string">&quot;国际米兰队&quot;</span>&gt;</span>国际米兰  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;item&quot;</span> <span class="attr">value</span>=<span class="string">&quot;AC米兰&quot;</span>&gt;</span>AC米兰  </span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;item&quot;</span> <span class="attr">value</span>=<span class="string">&quot;罗马队&quot;</span>&gt;</span>罗马队  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">name</span>=<span class="string">&quot;item&quot;</span> <span class="attr">value</span>=<span class="string">&quot;慕尼黑队&quot;</span>&gt;</span>慕尼黑队  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">value</span>=<span class="string">&quot;我是球迷，但不会踢球&quot;</span> <span class="attr">name</span>=<span class="string">&quot;secret&quot;</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;提交&quot;</span> <span class="attr">name</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;reset&quot;</span> <span class="attr">value</span>=<span class="string">&quot;重置&quot;</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/form/" data-id="clkc5jkwu002tystsdjupbnpv" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/前端/echart图表简单" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/echart%E5%9B%BE%E8%A1%A8%E7%AE%80%E5%8D%95/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.566Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>简单代码，前端视图</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;main&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 500px; height: 350px;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://libs.baidu.com/jquery/2.0.0/jquery.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript">  </span></span><br><span class="line"><span class="language-javascript">    $(<span class="keyword">function</span>(<span class="params"></span>)&#123;  </span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//var app.title = &#x27;2000-2016年中国汽车销量及增长率&#x27;;  </span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> chart=echarts.<span class="title function_">init</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;main&quot;</span>));  </span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> option = &#123;  </span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// title: &#123;  </span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">//     text: &#x27;2000-2016年中国汽车销量及增长率&#x27;  </span></span></span><br><span class="line"><span class="language-javascript">            <span class="comment">// &#125;,            tooltip: &#123;  </span></span></span><br><span class="line"><span class="language-javascript">                <span class="attr">trigger</span>: <span class="string">&#x27;axis&#x27;</span>  </span></span><br><span class="line"><span class="language-javascript">            &#125;,  </span></span><br><span class="line"><span class="language-javascript">            <span class="attr">legend</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: [<span class="string">&#x27;增速&#x27;</span>,<span class="string">&#x27;销量&#x27;</span>]  </span></span><br><span class="line"><span class="language-javascript">            &#125;,  </span></span><br><span class="line"><span class="language-javascript">            <span class="attr">xAxis</span>: [&#123;  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;category&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: [<span class="string">&#x27;2000&#x27;</span>,<span class="string">&#x27;2001&#x27;</span>,<span class="string">&#x27;2002&#x27;</span>,<span class="string">&#x27;2003&#x27;</span>,<span class="string">&#x27;2004&#x27;</span>,<span class="string">&#x27;2005&#x27;</span>,<span class="string">&#x27;2006&#x27;</span>,<span class="string">&#x27;2007&#x27;</span>,<span class="string">&#x27;2008&#x27;</span>,<span class="string">&#x27;2009&#x27;</span>,<span class="string">&#x27;2010&#x27;</span>,<span class="string">&#x27;2011&#x27;</span>,<span class="string">&#x27;2012&#x27;</span>,<span class="string">&#x27;2013&#x27;</span>,<span class="string">&#x27;2014&#x27;</span>,<span class="string">&#x27;2015&#x27;</span>,<span class="string">&#x27;2016&#x27;</span>]  </span></span><br><span class="line"><span class="language-javascript">            &#125;],  </span></span><br><span class="line"><span class="language-javascript">            <span class="attr">yAxis</span>: [&#123;  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;value&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>: <span class="string">&#x27;增速&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">min</span>: <span class="number">0</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">max</span>: <span class="number">50</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">position</span>: <span class="string">&#x27;right&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">axisLabel</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">formatter</span>: <span class="string">&#x27;&#123;value&#125; %&#x27;</span>  </span></span><br><span class="line"><span class="language-javascript">                &#125;  </span></span><br><span class="line"><span class="language-javascript">            &#125;, &#123;  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;value&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>: <span class="string">&#x27;销量&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">min</span>: <span class="number">0</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">max</span>: <span class="number">3000</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">position</span>: <span class="string">&#x27;left&#x27;</span>  </span></span><br><span class="line"><span class="language-javascript">            &#125;],  </span></span><br><span class="line"><span class="language-javascript">            <span class="attr">series</span>: [&#123;  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>: <span class="string">&#x27;增速&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;line&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">stack</span>: <span class="string">&#x27;总量&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">label</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">normal</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">show</span>: <span class="literal">true</span>,  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">position</span>: <span class="string">&#x27;top&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                    &#125;  </span></span><br><span class="line"><span class="language-javascript">                &#125;,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">lineStyle</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">normal</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">width</span>: <span class="number">3</span>,  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">shadowColor</span>: <span class="string">&#x27;rgba(0,0,0,0.4)&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">shadowBlur</span>: <span class="number">10</span>,  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">shadowOffsetY</span>: <span class="number">10</span>  </span></span><br><span class="line"><span class="language-javascript">                    &#125;  </span></span><br><span class="line"><span class="language-javascript">                &#125;,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: [<span class="number">1</span>,<span class="number">13</span>,<span class="number">37</span>,<span class="number">35</span>,<span class="number">15</span>,<span class="number">13</span>,<span class="number">25</span>,<span class="number">21</span>,<span class="number">6</span>,<span class="number">45</span>,<span class="number">32</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">13</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">11</span>]  </span></span><br><span class="line"><span class="language-javascript">            &#125;, &#123;  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">name</span>: <span class="string">&#x27;销量&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">type</span>: <span class="string">&#x27;bar&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">yAxisIndex</span>: <span class="number">1</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">stack</span>: <span class="string">&#x27;总量&#x27;</span>,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">label</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                    <span class="attr">normal</span>: &#123;  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">show</span>: <span class="literal">true</span>,  </span></span><br><span class="line"><span class="language-javascript">                        <span class="attr">position</span>: <span class="string">&#x27;top&#x27;</span>  </span></span><br><span class="line"><span class="language-javascript">                    &#125;  </span></span><br><span class="line"><span class="language-javascript">                &#125;,  </span></span><br><span class="line"><span class="language-javascript">                <span class="attr">data</span>: [<span class="number">209</span>,<span class="number">236</span>,<span class="number">325</span>,<span class="number">439</span>,<span class="number">507</span>,<span class="number">576</span>,<span class="number">722</span>,<span class="number">879</span>,<span class="number">938</span>,<span class="number">1364</span>,<span class="number">1806</span>,<span class="number">1851</span>,<span class="number">1931</span>,<span class="number">2198</span>,<span class="number">2349</span>,<span class="number">2460</span>,<span class="number">2735</span>]  </span></span><br><span class="line"><span class="language-javascript">            &#125;]  </span></span><br><span class="line"><span class="language-javascript">        &#125;;  </span></span><br><span class="line"><span class="language-javascript">        chart.<span class="title function_">setOption</span>(option);  </span></span><br><span class="line"><span class="language-javascript">    &#125;)  </span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/echart%E5%9B%BE%E8%A1%A8%E7%AE%80%E5%8D%95/" data-id="clkc5jkwt002rystscckp3km9" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/前端/css" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/css/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.553Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>看菜鸟</p>
+<p>用来渲染的：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; </span><br><span class="line">	<span class="attribute">background-color</span>:<span class="number">#d0e4fe</span>; &#125; </span><br><span class="line"><span class="selector-tag">h1</span> &#123; <span class="attribute">color</span>:orange; <span class="attribute">text-align</span>:center; &#125; </span><br><span class="line"><span class="selector-tag">p</span> &#123; <span class="attribute">font-family</span>:<span class="string">&quot;Times New Roman&quot;</span>; <span class="attribute">font-size</span>:<span class="number">20px</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/css/" data-id="clkc5jkwt002systsdb1kfsmf" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/前端/css-flex常用布局方式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/css-flex%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.547Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7010701578638196750">flex的5种常见使用 - 掘金 (juejin.cn)</a></p>
+<h2 id="块内元素垂直居中"><a href="#块内元素垂直居中" class="headerlink" title="块内元素垂直居中"></a>块内元素垂直居中</h2><p>justify-content: center;<br>align-items: center;<br>![[Pasted image 20230209002045.png]]</p>
+<h2 id="块内元素垂直"><a href="#块内元素垂直" class="headerlink" title="块内元素垂直"></a>块内元素垂直</h2><p>flex-direction: column;<br>align-items: center;<br>![[Pasted image 20230209002340.png]]</p>
+<h2 id="块内元素两端对齐"><a href="#块内元素两端对齐" class="headerlink" title="块内元素两端对齐"></a>块内元素两端对齐</h2><p>justify-content: space-between;<br>![[Pasted image 20230209002517.png]]</p>
+<h2 id="自动换行"><a href="#自动换行" class="headerlink" title="自动换行"></a>自动换行</h2><p>flex-wrap: wrap;<br>这个倒无所谓</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%89%8D%E7%AB%AF/css-flex%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E6%96%B9%E5%BC%8F/" data-id="clkc5jkwu002vystsa30q0tpj" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/其他/平潭旅" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E5%85%B6%E4%BB%96/%E5%B9%B3%E6%BD%AD%E6%97%85/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.516Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="景点名单："><a href="#景点名单：" class="headerlink" title="景点名单："></a>景点名单：</h3><ul>
+<li>龙王头沙滩（最优沙滩、日出）</li>
+<li>猴研岛（说不出来，得去）</li>
+<li>长江澳风车田&#x2F;最美环岛路（喜欢）</li>
+<li>北部湾生态廊道（大海与山交汇、风车）</li>
+<li>坛南湾（捡贝壳、沙滩好）</li>
+<li>北港村</li>
+<li>仙人井（可去可不去）</li>
+</ul>
+<h3 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h3><p>象鼻湾、将军山</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E5%85%B6%E4%BB%96/%E5%B9%B3%E6%BD%AD%E6%97%85/" data-id="clkc5jkwy003bystschn4cd7k" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/人工智能课程学习（本科）/人脸识别测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.507Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E6%B5%8B%E8%AF%95/" data-id="clkc5jkws002mysts02wa02pk" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/人工智能课程学习（本科）/人工智能课程学习（本科）总" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89%E6%80%BB/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.496Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>[[select topic- image recognition]]</p>
+<p>[[人脸识别测试]]</p>
+<p>[[image recognition demo from book]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89%E6%80%BB/" data-id="clkc5jkws002nysts6zxabn4w" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-zyt/人工智能课程学习（本科）/select topic- image recognition" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/21/zyt/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89/select%20topic-%20image%20recognition/" class="article-date">
+  <time class="dt-published" datetime="2023-07-21T05:14:43.487Z" itemprop="datePublished">2023-07-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Importance-of-image-recognition"><a href="#Importance-of-image-recognition" class="headerlink" title="Importance of image recognition"></a>Importance of image recognition</h2><p>Being able to “see” is a critical component of the learning process in humans. Similarly, even though they use different method to “see,” capturing images and recognizing what is contained in those images is of paramount importance to computers in order to create datasets to feed machine learning pipelines and obtain insight from that data. An obvious example of this is self-driving technology. In this case computers, just like their human counterparts, need to be able to ingest gigabytes worth of data in any given second, analyze that data, and make life altering decisions in real time. I am very excited for the day when this technology becomes widely available; my estimation is that this will happen sooner rather than later. According to the World Health Organization there were 1.25 million road traffic deaths in 2013. A big percentage of this will likely be avoided when self-driving cars get deployed. Self-driving technology is just one application of image recognition and the applications are almost limitless, only bounded by our imagination. Some of the other popular uses are: Automated image classification – We can see first - hand examples of this in Google Photos and when uploading images to Facebook and seeing how Facebook gives us suggestions about who is in the picture. Reverse image search – Google, among others, offers a feature where instead of using keywords as input and getting images as a result, you can use an image as the input and Google provides guesses as to what the image contains. You can try here: <a target="_blank" rel="noopener" href="https://images.google.com/">https://images.google.com/</a> Optical character recognition – Converting images to text relies heavily on image recognition. MRI and ultrasound interpretation – Some tools are outperforming humans in the recognition of cancers and other diseases. Having considered some practical applications of image recognition, let’s get into the package we’ll be using in order to see it for ourselves</p>
+<h2 id="what-is-image-recognition"><a href="#what-is-image-recognition" class="headerlink" title="what is image recognition"></a>what is image recognition</h2><p>Image recognition, in the context of machine vision, is <strong>the ability of software to identify objects, places, people, writing and actions in images</strong>. Computers can use machine vision technologies in combination with a camera and artificial intelligence software to achieve image recognition.</p>
+<h2 id="copy-from-bing"><a href="#copy-from-bing" class="headerlink" title="copy from bing"></a>copy from bing</h2><p><img src="https://images.ctfassets.net/30d5wzwnr6ur/mmTzkz9wJlXsKoTPrNodQ/c87aff4cd6d8a931497ccebf742ab7a3/Future_of_Shopping.jpg?w=2000&h=1000&q=50"></p>
+<h1 id="Image-Recognition"><a href="#Image-Recognition" class="headerlink" title="Image Recognition"></a>Image Recognition</h1><p>February 10, 2021</p>
+<h2 id="What-is-Image-Recognition"><a href="#What-is-Image-Recognition" class="headerlink" title="What is Image Recognition?"></a>What is Image Recognition?</h2><p>Image recognition is the ability of a computer powered camera to identify and detect objects or features in a digital image or video. It is a method for capturing, processing, examining, and sympathizing images. To identify and detect images, computers use machine vision technology that is powered by an artificial intelligence system. A typical image recognition algorithm includes the following:</p>
+<ul>
+<li><p>Optical character recognition</p>
+</li>
+<li><p>Pattern matching and gradient matching</p>
+</li>
+<li><p>Face Recognition</p>
+</li>
+<li><p>License plate matching</p>
+</li>
+<li><p>Scene identification</p>
+</li>
+</ul>
+<h3 id="How-does-Image-Recognition-work"><a href="#How-does-Image-Recognition-work" class="headerlink" title="How does Image Recognition work?"></a>How does Image Recognition work?</h3><p>Image recognition technology works by detecting salient regions, which are portions that contain the most information about the image or the object. It does this by isolating the most informative portions or features in a selected image and localizes them, while ignoring the rest of the features that may not be of much interest. The process uses an image recognition algorithm, also known as an image classifier, that takes an image as input and outputs what the image contains. For an algorithm to know what an image contains, it has to be trained to learn the differences between classes. For instance, if the goal of an image recognition system is to detect and identify dogs, the image recognition algorithm needs to be trained with thousands of images of dogs and thousands of images of backgrounds that do not contain any dogs.</p>
+<h3 id="How-does-Image-Recognition-algorithm-work"><a href="#How-does-Image-Recognition-algorithm-work" class="headerlink" title="How does Image Recognition algorithm work?"></a>How does Image Recognition algorithm work?</h3><p>Various face recognition models utilize different algorithms in order to perform their programmatic duties. Some programs use algorithms that identify facial features through extraction of facial landmarks from an image that shows a face of the subject. The algorithm analyzes the position, shape of the eyes, jaw and other facial features. The data obtained from such analysis is later used to search for other images with similar facial characteristics.</p>
+<p>Other algorithms on the other hand work by normalizing the gallery of a given face image and then compressing the particular face data, only saving the data that can be used for face recognition. A final result in the form of a probe is compared to the database of facial characteristics. This can be described as one of the earliest face recognition systems that were successful.</p>
+<p>Facial recognition algorithms can be split into two main categories: geometric that focuses on looking at identifying different facial features and photometric that looks at distilling a given image into different values that are later compared to the values in templates in order to eliminate variances. Some researchers tend to differentiate between two broad categories that are holistic and feature based. Holistic approach is focused on recognizing the face in its entirety, when the feature based is subdividing the given face into different components and analyzes each of them separately.</p>
+<p>Face recognition software solutions use different algorithms that work on different principles. Some include eigenfaces and principal component analysis while another utilize linear discriminant analysis, elastic graph matching and hidden Markov Model. All of them have their advantages and disadvantages, it all comes down to individual preferences of the client who is looking to incorporate facial recognition in his business.</p>
+<h4 id="The-algorithms-fall-into-four-different-categories"><a href="#The-algorithms-fall-into-four-different-categories" class="headerlink" title="The algorithms fall into four different categories."></a>The algorithms fall into four different categories.</h4><ol>
+<li><p>SIFT: Scale-Invariant Feature Transform</p>
+</li>
+<li><p>SURF: Speeded Up Robust Features</p>
+</li>
+<li><p>PCA: Principal Component Analysis</p>
+</li>
+<li><p>LDA: Linear Discriminant Analysis</p>
+</li>
+</ol>
+<h3 id="How-Image-Recognition-is-used-in-business"><a href="#How-Image-Recognition-is-used-in-business" class="headerlink" title="How Image Recognition is used in business?"></a>How Image Recognition is used in business?</h3><p>In the commercial world, the major applications of image recognition are face recognition, security and surveillance, visual geolocation, object recognition, gesture recognition, code recognition, industrial automation, image analysis in medical and driver assistance. These applications are revolutionizing the business world, across many industries, and here’s how:</p>
+<h4 id="In-E-commerce"><a href="#In-E-commerce" class="headerlink" title="In E-commerce"></a>In E-commerce</h4><p>Image recognition has been highly adopted in e-commerce, including search and advertising. Today, mobile applications use the technology to identify specific products, providing potential customers with a more engaging experience of the world around them. It presents a more interactive view of the world by making everything searchable.</p>
+<h4 id="Business-process-management"><a href="#Business-process-management" class="headerlink" title="Business process management"></a>Business process management</h4><p>Image recognition technology can assist in the identification process during business operations. An example of this would be the replacement of traditional ID cards with Face ID. In the workplace, this can be used to determine if a person is granted access to official work documents or simply to check in. Another example where image recognition is applicable for efficient business operations is in the manufacturing process. Machines equipped with image recognition can automatically detect defective products in the manufacturing pipeline.</p>
+<h4 id="Automotive-industry"><a href="#Automotive-industry" class="headerlink" title="Automotive industry"></a>Automotive industry</h4><p>Self-driving cars are the buzz in the automotive industry and are already being tested in the U.S. and other parts of the world. These advancements in the automobile world are made possible by computer vision technology which uses AI image recognition. Computer vision systems powered by deep learning are trained using thousands of images such as road signs, pathways, moving objects, vehicles, and people and are fed into the systems neural networks. The systems get intelligent as more training data is fed into the system and this is how autonomous driving is enabled.</p>
+<h4 id="The-benefits-of-Image-Recognition"><a href="#The-benefits-of-Image-Recognition" class="headerlink" title="The benefits of Image Recognition"></a>The benefits of Image Recognition</h4><p>Image recognition can really help you with digital marketing. By integrating the application’s programing interface to your text-based analytics platforms, you will be able to offer visual insights to your customers without the expensive product creation that uses logo detection. Image recognition can also help you monitor ROI and protect your brand. You will be able to track how a sponsorship is doing with image and logo detection and this will help you determine how much revenue you will get in return. Therefore, integrating an image recognition application programing interface is an easy way of giving your customers the best service.</p>
+<p>When using image recognition, you can easily transposition digital information. As opposed to virtual reality, image recognition doesn’t replace your environment with a digital one, instead, it adds more perks to it. in addition, you can easily organize your visual memory. Image recognition software can help you make mental notes through visual. If you take an image, its computer vision will match up with the visual background information, meaning that you can get information about wine bottles, books, DVDs, and many more by simply taking a photo of their covers or labels. When you have these images in your computer, you can then search for the information they contain, counting on keywords, location etc.</p>
+<h4 id="Known-challenges-of-image-recognition"><a href="#Known-challenges-of-image-recognition" class="headerlink" title="Known challenges of image recognition"></a>Known challenges of image recognition</h4><p>The variation of the Viewpoint. In a real-world scenario, many objects and entities are facing in different directions, as a result, when the image is used by the software, it might predict inaccurate values. Some systems are unable to understand that the changes within the alignment of a given image, doesn’t make it different. This results in lower accuracy of a given solution. On the contrary, our solution is well known to be invulnerable to this issue.</p>
+<p>Scale Variation. The difference in size affects the direct classification effectiveness of the object. The closer you get to the object, the bigger it looks in size. This principle works the other way around too. The farther you get, the smaller the object appears to you when you look at it. Some software solutions are highly affected by this issue and distantly cause a drastic reduction in the effectivity of object classification, whereas others are not as strongly affected.</p>
+<p>Object deformation. The image recognition system learns that objects can be in one shape only because normally objects do not change when they are deformed. This results in a situation when a shape changes in the real world, but the system instead doesn’t recognize that, as a result causing faults and inaccuracies.</p>
+<p>Object variation. The objects may appear in different shapes, sizes, and colors, but they still represent the same object class. The possible example could be, tables, chairs, and computers.</p>
+<h4 id="What-is-image-classification"><a href="#What-is-image-classification" class="headerlink" title="What is image classification"></a>What is image classification</h4><p>Image classification is a process of labeling and sorting objects within the given image based on the object classes. Normally a computer would use machine learning in order to identify what is represented on a given image. The task of predicting the image content is called image classification. The software utilizes premade image classification models in order to recognize different image classes. We have developed and keep constantly updating our face recognition solution that has builtin image classification. If you are looking for group images based on their characteristics, make sure to take a look here:</p>
+<p>The typical example of this can be a case when a model is trained to recognize pictures that represent three different object classes, a car, motorbike, and a pedestrian. When we provide the model with images, it will analyze a given image and return to you with output in a form of probabilistic assumptions. In case the object that is present on the image is a car, a model will provide with its decision that it is 85% sure that the object within the image is a car rather than anything else. At the same time, it will also provide you with a metric that the probability of the object within the image being a pedestrian or a motorbike is lower than 5%. As a result, you may assume that the object that is featured on the image is a car.</p>
+<p>Another possible example of image classification can be a situation when you use a search engine to find a particular image, let’s say a car. The search engine will search the web and provide you with hundreds and thousands of pictures and illustrations of what it perceives to be a car. This process can be described as a more advanced iteration of Image Detection, as neural networks have to process various objects within the different images, detect them, and then classify based on their data.</p>
+<h3 id="Known-image-classification-challenges"><a href="#Known-image-classification-challenges" class="headerlink" title="Known image classification challenges"></a>Known image classification challenges</h3><ol>
+<li><p><em>Algorithm maintenance.</em> The algorithms must always be constantly maintained and adjusted throughout its lifespan that one may produce relevant data results, as data and technology do not wait. They constantly evolve with new information sources and AI developments. As new practices come to the market, image classification systems must be adaptive and constantly grow on pair with competitors in order to stay relevant and be able to meet the demands of ever-changing customer’s requirements.</p>
+</li>
+<li><p><em>Video material.</em> In case a person has been captured by the camera from different perspectives, this can confuse the image classification system and it may list one person as multiple different people. This is avoided if the solution consolidates its files into a single media profile that is dedicated specifically to one individual. </p>
+</li>
+<li><p><em>Processing time.</em> Depending on the system, image classification might take a couple of hours to process as multiple categories have to references into the output. The timings might play an important role in time-sensitive researches, as a result, not every solution can be suitable.</p>
+</li>
+<li><p><em>Customization necessity.</em> The image classification solution should have the possibility of entering and detecting custom categories. It is important for some users for the machine to be able to learn other input characteristics that are relevant to a particular case. This will not only enhance the application field of new cases, but it will also allow the algorithm to research older cases that were inaccessible due to algorithm limitations. Nowadays, software solutions that are able to provide research data in easy to read information format are essential.</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/21/zyt/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%9C%AC%E7%A7%91%EF%BC%89/select%20topic-%20image%20recognition/" data-id="clkc5jkws002oystsbcxwenfv" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/home.md/page/24/">&laquo; Prev</a><a class="page-number" href="/home.md/">1</a><span class="space">&hellip;</span><a class="page-number" href="/home.md/page/23/">23</a><a class="page-number" href="/home.md/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/home.md/page/26/">26</a><a class="page-number" href="/home.md/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/home.md/page/36/">36</a><a class="extend next" rel="next" href="/home.md/page/26/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/excalidraw/" rel="tag">excalidraw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" rel="tag">标签一 标签二</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/excalidraw/" style="font-size: 20px;">excalidraw</a> <a href="/tags/%E6%A0%87%E7%AD%BE%E4%B8%80-%E6%A0%87%E7%AD%BE%E4%BA%8C/" style="font-size: 10px;">标签一 标签二</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Redis/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/polymorphism.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/Hash%E7%BB%93%E6%9E%84%E7%A4%BA%E6%84%8F%E5%9B%BE.excalidraw/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/21/zyt/%E9%9D%A2%E8%AF%95/other/final%E7%A4%BA%E6%84%8F.excalidraw/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
